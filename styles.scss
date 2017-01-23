@@ -1,0 +1,336 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    animation-delay: 4.25s;
+    animation-duration: 1s;
+    animation-name: body-animation;
+    animation-fill-mode: forwards;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    will-change: background-color;
+    user-select: none;
+    cursor: default;
+}
+
+@keyframes body-animation {
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: #000000;
+    }
+}
+
+.main-title-container {
+    width: 400px;
+    margin: -150px 0 0 -200px;
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+}
+
+.main-title {
+    word-spacing: 999999px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    opacity: 0;
+    margin: 80px 10px 10px 10px;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+    animation-name: main-title-animation;
+    animation-fill-mode: forwards;
+    transition: font 0.3s ease;
+    transform-origin: 50% 50%;
+    color: black;
+    overflow: hidden;
+    will-change: transform, opacity, margin-top, height;
+
+}
+
+@keyframes main-title-animation {
+    0% {
+        opacity: 0;
+        margin-top: 80px;
+        transform: scale(0.75,0.75);
+    }
+
+    50% {
+        opacity: 1;
+        margin-top: 0;
+        transform: scale(1,1);
+    }
+
+    60% {
+        opacity: 1;
+        height: 250px;
+    }
+
+    100% {
+        transform: scale(1,1);
+        margin-top: 0;
+        opacity: 1;
+        height: 0;
+    }
+}
+
+.underline {
+    width: 0;
+    border-top: 2px solid black;
+    margin: -10px auto 0;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-name: underline-animation;
+    animation-fill-mode: forwards;
+    will-change: width, transform, opacity, animation-timing-function;
+}
+
+@keyframes underline-animation {
+    0% {
+        width: 0;
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    50% {
+        width: 90%;
+        transform: translate(0, 0);
+        animation-timing-function: cubic-bezier(0.35, 1, 0.4, 1);
+    }
+
+    75% {
+        width: 90%;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.subtitle-container {
+    transition: .25s;
+}
+
+.subtitle-wrapper {
+    animation-delay: 4.5s;
+    animation-duration: 1s;
+    animation-name: subtitle-animation;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    padding-bottom: 24px;
+    width: 600px;
+    margin-left: calc(50vw - 300px);
+    margin-top: calc(50vh - 110px);
+    transition: 0.25s;
+}
+
+.subtitle-active {
+    opacity: 0;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+    will-change: transform, opacity;
+}
+
+@keyframes subtitle-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.95,0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+.subtitle-scroll {
+    margin: 30px 0 0;
+    display: block;
+}
+
+.arrow-container {
+    width: 32.53px;
+    margin: auto;
+    padding-bottom: 25px;
+    display: block;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.arrow-down {
+    border: solid white;
+    width: 20px;
+    height: 20px;
+    border-left: 2px;
+    border-top: 2px;
+    transform: rotate(45deg) scale(1,1);
+    margin: 5px 0 -15px 4px;
+}
+
+.white-bar {
+    position: absolute;
+    top: 140vh;
+    width: 100%;
+    background-color: #fff;
+    height: 50vh;
+    transition: 0.25s;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 16vmin;
+    will-change: transform, font-size, width, height, left, border, opacity;
+}
+
+.white-bar-active {
+    animation-duration: 3s;
+    animation-name: white-bar-animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes white-bar-animation {
+    0% {
+        font-size: 16vmin;
+        width: 100vw;
+        border-radius: 0;
+        left: 0;
+        animation-timing-function: cubic-bezier(0.23, 0.59, 0.6, 0.87);
+    }
+
+    10% {
+        width: 50vh;
+        left: calc(50% - 25vh);
+        font-size: 8vmin;
+        transform: scale(1, 1);
+        animation-timing-function: cubic-bezier(0.77, 0.36, 0.56, 1);
+    }
+
+    13% {
+        border-radius: 400px;
+    }
+
+    16% {
+        transform: scale(1.2, 1.2);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(0, 0);
+        border-radius: 400px;
+        width: 50vh;
+        left: calc(50% - 25vh);
+        font-size: 8vmin;
+        opacity: 0;
+    }
+
+    30% {
+        font-size: 16vmin;
+        width: 100vw;
+        border-radius: 0;
+        left: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.white-bar-text {
+    width: 100%;
+    text-align: center;
+    color: black;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    padding: 0;
+}
+
+@media (max-width: 650px) {
+    .main-title-container {
+        width: 200px;
+        margin: -75px 0 0 -100px;
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+    }
+
+    .main-title {
+        font-size: 35px;
+        margin: 40px 5px 5px 5px;
+    }
+
+    @keyframes main-title-animation {
+        0% {
+            opacity: 0;
+            margin-top: 40px;
+            transform: scale(0.75,0.75);
+        }
+
+        50% {
+            opacity: 1;
+            margin-top: 0;
+            transform: scale(1,1);
+        }
+
+        60% {
+            opacity: 1;
+            height: 125px;
+        }
+
+        100% {
+            transform: scale(1,1);
+            margin-top: 0;
+            opacity: 1;
+            height: 0;
+        }
+    }
+
+    .underline {
+        border-top: 1px solid black;
+        margin: -5px auto 0;
+    }
+
+    @keyframes underline-animation {
+        0% {
+            width: 0;
+            animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        50% {
+            width: 90%;
+            transform: translate(0, 0);
+            animation-timing-function: cubic-bezier(0.35, 1, 0.4, 1);
+        }
+
+        75% {
+            width: 90%;
+        }
+
+        95% {
+            opacity: 1;
+        }
+
+        100% {
+            width: 0;
+            opacity: 0;
+        }
+    }
+}
