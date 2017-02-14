@@ -13,10 +13,12 @@ $(document).ready(() => {
             // Make object now clickable
             $(arrows).addClass('clickable');
             $(whiteBar).addClass('clickable');
-            // Scroll down until whiteBar is in the middle when 'arrows' is clicked
+
             $(arrows).click(() => {
+                // Scroll down until whiteBar is in the middle when 'arrows' is clicked
+                const test = $(window).height() - $(whiteBar).outerHeight();
                 // Scroll to the 'whiteBar' position from top and subtract half of it's height
-                $('body').animate({scrollTop: whiteBar.offset().top - whiteBar.outerHeight() / 2}, 'slow');
+                $('body').animate({scrollTop: whiteBar.offset().top - test/2}, 'slow');
             });
             // Animate the page back to top
             $('body').animate({scrollTop: 0}, 'fast', () => {
@@ -24,7 +26,7 @@ $(document).ready(() => {
                 $(window).scroll(() => {
                     if (subtitleContainer) {
                         // Get the height of browser page
-                        const windowHeight = window.outerHeight;
+                        const windowHeight = $(window).height();
                         // Variable with distance scrolled from top
                         const scrolled = $('body').scrollTop() / windowHeight;
                         // Opacity changes with the distance scrolled
