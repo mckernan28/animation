@@ -125,7 +125,7 @@ body {
     animation-fill-mode: forwards;
     opacity: 0;
     padding-bottom: 24px;
-    max-width: 100vw;
+    max-width: 75vw;
     margin: calc(50vh - 110px) auto 0;
     transition: 0.25s;
 }
@@ -349,14 +349,22 @@ body {
         font-size: 1em;
     }
 
+    .arrow-down {
+        width: 13px;
+        height: 13px;
+        border-left: 1px;
+        border-top: 1px;
+        margin: 3px 0 -10px 7px;
+    }
+
     .white-bar {
         height: 30vh;
-        font-size: 8vmin;
+        font-size: 10vmin;
     }
 
     @keyframes white-bar-animation {
         0% {
-            font-size: 8vmin;
+            font-size: 10vmin;
             width: 100vw;
             border-radius: 0;
             left: 0;
@@ -366,7 +374,7 @@ body {
         10% {
             width: 30vh;
             left: calc(50% - 15vh);
-            font-size: 8vmin;
+            font-size: 5vmin;
             transform: scale(1, 1);
             animation-timing-function: cubic-bezier(0.77, 0.36, 0.56, 1);
         }
@@ -388,12 +396,12 @@ body {
             border-radius: 400px;
             width: 30vh;
             left: calc(50% - 15vh);
-            font-size: 8vmin;
+            font-size: 5vmin;
             opacity: 0;
         }
 
         30% {
-            font-size: 8vmin;
+            font-size: 10vmin;
             width: 100vw;
         }
 
@@ -405,4 +413,26 @@ body {
             opacity: 1;
         }
     }
+}
+
+.parallaxtest {
+    top: 1000px;
+    width: 100vw;
+    height: 30vh;
+    background: red;
+    position: absolute;
+}
+.parallaxtest2 {
+    top: 1000px;
+    width: 100vw;
+    height: 30vh;
+    background: white;
+    position: absolute;
+}
+.parallaxtest3 {
+    top: 1000px;
+    width: 100vw;
+    height: 30vh;
+    background: red;
+    position: absolute;
 }

@@ -35,6 +35,12 @@ $(document).ready(() => {
                         // Change the opacity of elements depending on the distance scrolled
                         subtitleContainer.css({'opacity': opacitySubtitle});
                         whiteBar.css({'opacity': opacityWhiteBar});
+
+
+                        $('.parallaxtest').css('top', -(scrolled * 200) + 600 + 'px');
+                        $('.parallaxtest2').css('top', -(scrolled * 400) + 600 + 'px');
+                        $('.parallaxtest3').css('top', -(scrolled * 600) + 600 + 'px');
+
                     }
                 });
             });
