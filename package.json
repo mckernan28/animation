@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "devDependencies": {
     "css-loader": "^0.26.1",
+    "jquery": "^3.1.1",
     "node-sass": "^4.2.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.0-rc.3",
-    "jquery": "^3.1.1"
+    "webpack-dashboard": "^0.3.0",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "scripts": {
+    "start": "webpack-dashboard -- webpack-dev-server --hot --inline"
   }
 }

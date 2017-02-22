@@ -180,7 +180,7 @@ body {
 
 .white-bar {
     position: absolute;
-    top: 140vh;
+    top: 200vh;
     width: 100%;
     background-color: #fff;
     height: 50vh;
@@ -415,24 +415,7 @@ body {
     }
 }
 
-.parallaxtest {
-    top: 1000px;
-    width: 100vw;
-    height: 30vh;
-    background: red;
+#animation {
     position: absolute;
-}
-.parallaxtest2 {
-    top: 1000px;
-    width: 100vw;
-    height: 30vh;
-    background: white;
-    position: absolute;
-}
-.parallaxtest3 {
-    top: 1000px;
-    width: 100vw;
-    height: 30vh;
-    background: red;
-    position: absolute;
+    top: 50vh;
 }

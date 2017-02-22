@@ -20,6 +20,8 @@ $(document).ready(() => {
                 // Scroll to the 'whiteBar' position from top and subtract half of it's height
                 $('body').animate({scrollTop: whiteBar.offset().top - test/2}, 'slow');
             });
+            let  canvas = document.getElementById('animation');
+            let canvasScrolled = 0;
             // Animate the page back to top
             $('body').animate({scrollTop: 0}, 'fast', () => {
                 // Function for the scrolling of the page
@@ -36,10 +38,12 @@ $(document).ready(() => {
                         subtitleContainer.css({'opacity': opacitySubtitle});
                         whiteBar.css({'opacity': opacityWhiteBar});
 
+                        const fromTop = $(window).scrollTop();
+                        const fromTopCanvas = $('#animation').scrollTop();
+                         canvasScrolled = (fromTop-fromTopCanvas)/(fromTopCanvas+windowHeight);
 
-                        $('.parallaxtest').css('top', -(scrolled * 200) + 600 + 'px');
-                        $('.parallaxtest2').css('top', -(scrolled * 400) + 600 + 'px');
-                        $('.parallaxtest3').css('top', -(scrolled * 600) + 600 + 'px');
+                        render();
+
 
                     }
                 });
@@ -51,6 +55,30 @@ $(document).ready(() => {
                     whiteBar.removeClass('white-bar-active')
                 }, 3000);
             });
+
+            $(window).resize(resize).resize();
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight*2;
+                render()
+            }
+
+            function render(){
+                var ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                square("red", (canvas.width/2-275), (canvas.height/5), 100, 100, 2);
+                square("blue", (canvas.width/2-125), (canvas.height/5), 100, 100, 8);
+                square("green", (canvas.width/2+25), (canvas.height/5), 100, 100, 4);
+                square("gold", (canvas.width/2+175), (canvas.height/5), 100, 100, 6);
+
+
+                function square(color, x, y, width, height, offset){
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y - (offset*canvasScrolled*100), width, height);
+                }
+            }
         }, 4000)
     });
 });
+
